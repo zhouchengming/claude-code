@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "bin": {
-    "claude-haha": "./bin/claude-haha"
+    "claude": "./bin/claude"
   },
   "scripts": {
-    "claude-haha": "bun run ./bin/claude-haha",
-    "start": "bun run ./bin/claude-haha"
+    "claude": "bun --env-file=.env ./src/entrypoints/cli.tsx",
+    "start": "bun --env-file=.env ./src/entrypoints/cli.tsx"
   },
   "dependencies": {
     "@anthropic-ai/sandbox-runtime": "^0.0.44",
