@@ -41,6 +41,9 @@ async function main(): Promise<void> {
     return;
   }
 
+  const { applyDoubaoArkEnvDefaults } = await import('../utils/model/doubaoEnv.js');
+  applyDoubaoArkEnvDefaults();
+
   // For all other paths, load the startup profiler
   const {
     profileCheckpoint

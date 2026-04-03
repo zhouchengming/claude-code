@@ -1,6 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { readFileSync } from 'fs'
 import { createInterface } from 'readline'
+import { applyDoubaoArkEnvDefaults } from './utils/model/doubaoEnv.js'
 
 type OutputFormat = 'text' | 'json'
 
@@ -27,6 +28,7 @@ function printHelp(): void {
       '  ANTHROPIC_BASE_URL',
       '  ANTHROPIC_MODEL',
       '  API_TIMEOUT_MS',
+      '  CLAUDE_CODE_USE_DOUBAO=1 — preset for 火山方舟 (optional ARK_API_KEY / DOUBAO_API_KEY)',
       '',
     ].join('\n'),
   )
@@ -125,6 +127,7 @@ function getSystemPrompt(
 }
 
 async function run(): Promise<void> {
+  applyDoubaoArkEnvDefaults()
   const parsed = parseArgs(process.argv.slice(2))
 
   if (parsed.command === 'help') {

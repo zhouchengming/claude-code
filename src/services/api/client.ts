@@ -68,6 +68,11 @@ import {
  * 2. Global CLOUD_ML_REGION variable
  * 3. Default region from config
  * 4. Fallback region (us-east5)
+ *
+ * 火山方舟 / 豆包（Anthropic Messages 兼容）:
+ * - 设置 CLAUDE_CODE_USE_DOUBAO=1 可自动填充 ANTHROPIC_BASE_URL 与 ANTHROPIC_AUTH_TOKEN
+ *   （来源：ARK_API_KEY / DOUBAO_API_KEY / VOLCENGINE_API_KEY，见 src/utils/model/doubaoEnv.ts）
+ * - 或手动设置 ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN，与 MiniMax/OpenRouter 等代理方式相同
  */
 
 function createStderrLogger(): ClientOptions['logger'] {
