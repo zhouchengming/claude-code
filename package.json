@@ -7,8 +7,8 @@
     "claude": "./bin/claude"
   },
   "scripts": {
-    "claude": "bun --env-file=.env ./src/entrypoints/cli.tsx",
-    "start": "bun --env-file=.env ./src/entrypoints/cli.tsx"
+    "claude": "bun --feature=BUDDY --env-file=.env ./src/entrypoints/cli.tsx",
+    "start": "bun --feature=BUDDY --env-file=.env ./src/entrypoints/cli.tsx"
   },
   "dependencies": {
     "@anthropic-ai/sandbox-runtime": "^0.0.44",
